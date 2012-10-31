@@ -19,8 +19,6 @@ package org.netherlicious;
 
 //* IMPORTS: JDK/JRE
 	import java.lang.reflect.Field;
-	import java.lang.NoSuchFieldException;
-	import java.lang.IllegalAccessException;
 //* IMPORTS: BUKKIT
 	import org.bukkit.craftbukkit.CraftWorld;
 	import org.bukkit.craftbukkit.generator.NormalChunkGenerator;
@@ -60,11 +58,9 @@ public class NetherliciousListener implements Listener
 	{
 		World world = event.getWorld();
 
-		this.plugin.log.info("1");
 		if(world.getEnvironment() != World.Environment.valueOf("NETHER"))
 			return;
 
-		this.plugin.log.info("2");
 		net.minecraft.server.World defaultWorld;
 		defaultWorld = ((CraftWorld) world).getHandle();
 
@@ -75,16 +71,12 @@ public class NetherliciousListener implements Listener
 
 		ChunkProviderServer providerServer = (ChunkProviderServer) provider;
 
-		this.plugin.log.info("3");
-
 		if(!(providerServer.chunkProvider instanceof NormalChunkGenerator))
 			return;
 
 		NormalChunkGenerator providerNormal;
 		providerNormal = (NormalChunkGenerator) providerServer.chunkProvider;
 		IChunkProvider providerPrivate;
-
-		this.plugin.log.info("4");
 
 		try
 		{
@@ -93,28 +85,14 @@ public class NetherliciousListener implements Listener
 			f.setAccessible(true);
 			providerPrivate = (IChunkProvider) f.get(providerNormal);
 		}
-		catch(NoSuchFieldException e)
-		{
-			this.plugin.log.info("WRONG BANK!");
-			return;
-		}
-		catch(IllegalAccessException e)
-		{
-			this.plugin.log.info("THE POLICE ARE COMING!");
-			return;
-		}
 		catch(Exception e)
 		{
-			this.plugin.log.info("BUT WHO KILLED MR. BODY?!");
 			return;
 		}
-
-		this.plugin.log.info("5");
 
 		if(!(providerPrivate instanceof ChunkProviderHell))
 			return;
 
-		this.plugin.log.info("6");
 		int x = event.getChunk().getX();
 		int z = event.getChunk().getZ();
 		byte[] buffer = new byte[32768];

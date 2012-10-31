@@ -18,7 +18,7 @@
 package org.netherlicious;
 
 //* IMPORTS: JDK/JRE
-	import java.util.logging.Logger;
+	//* NOT NEEDED
 //* IMPORTS: BUKKIT
 	import org.bukkit.plugin.java.JavaPlugin;
 //* IMPORTS: SPOUT
@@ -29,11 +29,9 @@ package org.netherlicious;
 public class Netherlicious extends JavaPlugin
 {
 	private	NetherliciousListener listener;
-	public Logger log;
 
 	public void onLoad()
 	{
-		this.log = this.getLogger();
 		this.listener = new NetherliciousListener(this);
 	}
 
