@@ -1,6 +1,5 @@
 == Netherlicious ==
-**[[http://ci.bitmissile.com/job/Netherlicious/|Download]] |
-[[https://github.com/Glitchfinder/Netherlicious|Source]] |
+**[[https://github.com/Glitchfinder/Netherlicious|Source]] |
 [[https://github.com/Glitchfinder/Netherlicious/issues|Issue Tracker]]**
 
 Netherlicios is a simple plugin that fixes a very big issue with the current

@@ -1,6 +1,5 @@
 ﻿== Netherlicious ==
 
-  Download: http://ci.bitmissile.com/job/Netherlicious/
   Source: https://github.com/Glitchfinder/Netherlicious/
   Issue Tracker: https://github.com/Glitchfinder/Netherlicious/issues/
 
