@@ -1,0 +1,8 @@
+name: Netherlicious
+version: 1.0
+description: >
+  This plugin fixes wither skeleton and blaze spawning patterns for the Nether.
+author: Glitchfinder 
+website: https://github.com/Glitchfinder/Netherlicious
+
+main: org.netherlicious.Netherlicious
